@@ -1,0 +1,88 @@
+"""
+常量定义：颜色、尺寸、坐标、阶段名
+"""
+
+# 窗口设置
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 720
+FPS = 60
+
+# 卡牌尺寸
+CARD_WIDTH = 80
+CARD_HEIGHT = 120
+
+# 颜色定义
+COLOR_MONSTER = (255, 139, 83)    # 怪兽卡 橙色 #FF8B53
+COLOR_SPELL = (29, 158, 116)      # 魔法卡 绿色 #1D9E74
+COLOR_TRAP = (188, 90, 132)       # 陷阱卡 紫色 #BC5A84
+COLOR_CARD_BACK = (101, 67, 33)   # 卡背 深棕色
+COLOR_FIELD = (34, 139, 34)       # 场地背景 绿色 #228B22
+COLOR_BORDER = (0, 0, 0)          # 黑色边框
+COLOR_SELECTED = (255, 215, 0)    # 选中 金色
+COLOR_HIGHLIGHT = (0, 255, 0)     # 可操作 绿色
+COLOR_ENEMY = (255, 0, 0)         # 敌方 红色
+COLOR_WHITE = (255, 255, 255)
+COLOR_BLACK = (0, 0, 0)
+COLOR_LP_BG = (139, 0, 0)        # 生命值背景 暗红
+
+# 阶段名称
+PHASE_NAMES = {
+    "draw": "抽卡阶段",
+    "standby": "准备阶段",
+    "main1": "主要阶段1",
+    "battle": "战斗阶段",
+    "main2": "主要阶段2",
+    "end": "结束阶段",
+}
+
+# 场地布局坐标 (中心点或左上角)
+# 玩家区域 (下半部分)
+PLAYER_HAND_Y = SCREEN_HEIGHT - 180
+PLAYER_HAND_SPACING = 15
+PLAYER_MONSTER_Y = SCREEN_HEIGHT - 350
+PLAYER_SPELL_Y = SCREEN_HEIGHT - 470
+PLAYER_FIELD_SPACING = 100
+PLAYER_DECK_X = 100
+PLAYER_GRAVE_X = SCREEN_WIDTH // 2 - 50
+PLAYER_EXTRA_X = SCREEN_WIDTH - 150
+PLAYER_LP_X = SCREEN_WIDTH - 120
+PLAYER_LP_Y = SCREEN_HEIGHT - 50
+
+# 对手区域 (上半部分)
+OPPONENT_HAND_Y = 120
+OPPONENT_MONSTER_Y = 200
+OPPONENT_SPELL_Y = 320
+OPPONENT_DECK_X = SCREEN_WIDTH // 2 - 50
+OPPONENT_GRAVE_X = SCREEN_WIDTH - 150
+OPPONENT_EXTRA_X = 100
+OPPONENT_LP_X = 120
+OPPONENT_LP_Y = 50
+
+# 中央战斗线
+BATTLE_LINE_Y = SCREEN_HEIGHT // 2
+
+# 怪兽区/魔法陷阱区 卡位数量
+ZONE_SIZE = 5
+
+# 怪兽区卡位中心 x 坐标 (5个)
+PLAYER_MONSTER_CENTERS = [
+    SCREEN_WIDTH // 2 - 200,
+    SCREEN_WIDTH // 2 - 100,
+    SCREEN_WIDTH // 2,
+    SCREEN_WIDTH // 2 + 100,
+    SCREEN_WIDTH // 2 + 200,
+]
+OPPONENT_MONSTER_CENTERS = PLAYER_MONSTER_CENTERS
+
+# 魔法陷阱区
+PLAYER_SPELL_CENTERS = PLAYER_MONSTER_CENTERS
+OPPONENT_SPELL_CENTERS = PLAYER_MONSTER_CENTERS
+
+# 操作模式
+MODE_IDLE = "idle"
+MODE_SELECT_TRIBUTE = "select_tribute"
+MODE_SELECT_POSITION = "select_position"
+MODE_SELECT_ATTACK_TARGET = "select_attack_target"
+
+# 直接攻击目标索引（虚拟）
+ATTACK_DIRECT = -1
